@@ -1,0 +1,75 @@
+@page {
+  size: A4;
+}
+@media print {
+  body {
+    font-size: 12px;
+  }
+}
+
+header {
+}
+.billing {
+  display: flex;
+  justify-content: space-between;
+  .address-acount {
+    flex-shrink: 10%;
+  }
+  .balance {
+    flex-basis: 70%;
+    table {
+      width: 100%;
+    }
+  }
+}
+main {
+  .title {
+    display: flex;
+    justify-content: center;
+  }
+  .row {
+    table {
+      width: 100%;
+    }
+  }
+  .note {
+    font-weight: 600;
+  }
+}
+
+footer {
+  .anouncement {
+    font-weight: 600;
+  }
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .rules {
+      flex-basis: 25%;
+    }
+    .table {
+      flex-basis: 25%;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+
+        &:last-child {
+          .cell {
+            border-bottom: 5px solid black;
+          }
+        }
+        .cell {
+          border-top: 5px solid black;
+          flex: 1;
+          padding: 10px;
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+}

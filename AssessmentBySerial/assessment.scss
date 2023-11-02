@@ -1,0 +1,72 @@
+@page {
+  margin: 1cm;
+  size: A4 landscape;
+  @bottom-center {
+    content: counter(page);
+  }
+}
+
+@page :first {
+  .header {
+    display: flex;
+  }
+}
+thead tfoot {
+  page: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px double black;
+}
+
+table {
+  width: 100%;
+  line-height: 1.5;
+  border-collapse: collapse;
+  border-spacing: 5px;
+  .table-head {
+    border-top: 1px double black;
+    border-bottom: 3px double black;
+    tr {
+      th {
+        font-weight: 600;
+        text-align: right;
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+          text-align: left;
+        }
+        &:nth-child(4),
+        &:nth-child(5) {
+          text-align: center;
+        }
+      }
+    }
+  }
+  tbody {
+    border-bottom: 1px solid black;
+
+    tr {
+      td {
+        text-align: right;
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+          text-align: left;
+        }
+      }
+    }
+    .result {
+      td {
+        &:nth-child(4),
+        &:nth-child(5) {
+          border-top: 1px solid black;
+          border-spacing: 2px;
+        }
+      }
+    }
+  }
+}
