@@ -1,0 +1,201 @@
+body {
+  font-weight: 600;
+  line-height: 1.5;
+}
+@page {
+  @top-center {
+    content: element(header);
+  }
+  @bottom-center {
+    content: element(footer);
+  }
+}
+@media print {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 10px;
+  }
+
+  /* Footer */
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 10px;
+  }
+
+  /* Main content */
+}
+header {
+  top: 0;
+  page: auto;
+  line-height: 1.5;
+  .invoice-head {
+    display: flex;
+    justify-content: space-between;
+    .info {
+      margin-left: 2cm;
+      .address {
+        font-weight: 600;
+        h4 {
+          margin: 0;
+          font-weight: 600;
+        }
+      }
+    }
+    .date {
+      margin-left: auto;
+      align-self: flex-end;
+    }
+    img {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  .invoice-bill {
+    .title {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+footer {
+  bottom: 0;
+  page: auto;
+  .anouncement {
+    p {
+      font-weight: 300;
+    }
+  }
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .rules {
+      flex-basis: 30%;
+    }
+    .table {
+      height: auto;
+      flex-basis: 25%;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      .row {
+        display: flex;
+        justify-content: space-between;
+        &:last-child {
+          .cell {
+            border-bottom: 5px solid black;
+          }
+        }
+        .cell {
+          border-top: 5px solid black;
+          flex: 1;
+          padding: 10px;
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+}
+
+.billing {
+  display: flex;
+  justify-content: space-between;
+  .address-acount {
+    margin-right: 120px;
+    display: flex;
+    flex-direction: column;
+    .addr {
+      font-weight: 300;
+    }
+  }
+  .balance {
+    flex-basis: 70%;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      tr {
+        td {
+          text-align: right;
+          &:nth-child(even) {
+            font-weight: 100;
+          }
+        }
+      }
+      .balance-due {
+        td {
+          &:nth-child(2) {
+            border-top: 1px solid black;
+            border-bottom: 1px double black;
+          }
+        }
+      }
+    }
+  }
+}
+
+main {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    thead {
+      border-top: 2px solid black;
+      tr {
+        &:nth-child(1),
+        :nth-child(3) {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  page: auto;
+  .anouncement {
+    p {
+      font-weight: 300;
+    }
+  }
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .rules {
+      flex-basis: 30%;
+    }
+    .table {
+      flex-basis: 25%;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+
+        &:last-child {
+          .cell {
+            border-bottom: 5px solid black;
+          }
+        }
+        .cell {
+          border-top: 5px solid black;
+          flex: 1;
+          padding: 10px;
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+}

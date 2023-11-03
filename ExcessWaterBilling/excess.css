@@ -6,6 +6,16 @@
     font-size: 12px;
   }
 }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header img {
+  width: 200px;
+  height: 200px;
+}
+
 .billing {
   display: flex;
   justify-content: space-between;
