@@ -1,24 +1,15 @@
 @page {
-  margin: 1cm;
+    
   size: A4;
-  
+  margin: 1cm;
+ 
+  counter-increment: page;
 }
 
-@page :first {
-  .header {
-    display: flex;
-  }
-}
-th:first-child,
-td:first-child {
-  max-width: 50px; /* Adjust the maximum width as needed */
-}
-thead tfoot {
-  page: auto;
-}
-body{
+body {
   padding: 10px;
   font-size: 10px;
+  counter-reset: page;
 }
 .header {
   display: flex;
@@ -26,33 +17,33 @@ body{
   justify-content: space-between;
   border-top: 3px double black;
   height: 90px;
- .title{
-  align-self: flex-start;
-  h1{
-    margin: 0;
+  .title {
+    align-self: flex-start;
+    h1 {
+      margin: 0;
+    }
   }
- }
 }
 
 table {
+  th:first-child,
+  td:first-child {
+    max-width: 50px; /* Adjust the maximum width as needed */
+  }
   width: 100%;
   line-height: 2.5;
   border-collapse: collapse;
   border-spacing: 5px;
-  th:first-child,
-td:first-child {
-  max-width: 60px; /* Adjust the maximum width as needed */
-}
-  &:nth-child(2){
-    
-      &::before{
-        content: '';
+  &:nth-child(2) {
+    &::before {
+      content: "";
       display: block;
-      margin-bottom: 20px; 
-        }
-      border-top: 0;
+      margin-bottom: 20px;
+    }
+    border-top: 0;
   }
   .table-head {
+    display: table-header-group;
     border-top: 3px double black;
     border-bottom: 3px double black;
     tr {
@@ -72,8 +63,9 @@ td:first-child {
     }
   }
   tbody {
+    display: table-row-group;
     border-top: 1px solid black;
-    &:first-of-type{
+    &:first-of-type {
       border-top: 0;
     }
     tr {
@@ -86,7 +78,7 @@ td:first-child {
         }
       }
     }
-    .spacer{
+    .spacer {
       height: 20px;
     }
     .result {
@@ -96,8 +88,27 @@ td:first-child {
         &:nth-child(5) {
           border-top: 1px solid black;
           border-spacing: 2px;
-         
         }
+      }
+    }
+  }
+  tfoot{
+    display: table-footer-group;
+    tr{
+      td{
+        #number{
+          &::after{
+            counter-increment:page;
+          content:"Page " counter(page);
+          }
+          
+        }
+        .total{
+          &::after{
+            content: "of " counter(pages);
+          
+        }
+      }
       }
     }
   }

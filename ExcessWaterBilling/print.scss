@@ -1,0 +1,116 @@
+
+
+@media print {
+    body {
+      font-size: 12px;
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .invoice-head {
+          display: flex;
+          justify-content: space-between;
+          .info {
+            margin-left: 1cm;
+            .address {
+              font-weight: 600;
+              h3 {
+                margin: 0;
+                font-weight: 600;
+              }
+            }
+          }
+          .date {
+            margin-left: auto;
+            align-self: flex-end;
+          }
+          img {
+            width: 150px;
+            height: auto;
+          }
+        }
+      }
+      .billing {
+        display: flex;
+        justify-content: space-between;
+        .address-account {
+          display: flex;
+          flex-direction: column;
+          flex-basis: 30%;
+          justify-content: space-between;
+          .addr{
+            margin-bottom: 20px;
+      margin-left: 24px;
+          }
+        }
+        .balance {
+          flex-basis: 60%;
+          table {
+            width: 100%;
+            tbody{
+              .result{
+                &:nth-child(3), &:nth-child(4){
+                  font-weight: 600;
+                }
+              }
+            }
+      
+          }
+        }
+      }
+      main {
+      
+        .title {
+          display: flex;
+          justify-content: center;
+        }
+        .row {
+          table {
+            width: 100%;
+          }
+        }
+        .note {
+          font-weight: 600;
+        }
+      }
+      
+      footer {
+        .anouncement {
+          font-weight: 600;
+        }
+        .bottom {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .rules {
+            flex-basis: 25%;
+          }
+          .table {
+            flex-basis: 25%;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+      
+            .row {
+              display: flex;
+              justify-content: space-between;
+      
+              &:last-child {
+                .cell {
+                  border-bottom: 5px solid black;
+                }
+              }
+              .cell {
+                border-top: 5px solid black;
+                flex: 1;
+                padding: 10px;
+                margin: 0 10px;
+              }
+            }
+          }
+        }
+      }
+      
+  }
+  

@@ -1,11 +1,23 @@
 @page {
  size: A4 landscape; 
   margin:1cm 0;
+  counter-increment: page;
+}
+@page{
+  @bottom-right{
+    content: "Page " counter(page);
+  }
+  @bottom-left{
+    content:"Thursday, "
+  }
 }
 
 @page :first {
   .header {
     display: flex;
+  }
+  .table-foot{
+    display: none;
   }
 }
 body{
