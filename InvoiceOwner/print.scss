@@ -1,0 +1,44 @@
+@media print {
+    @page {
+        size: letter; /* Specify the paper size as needed */
+        margin: 10mm; /* Set margins to control the content area */
+      }
+      
+      .header, .footer {
+        display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        page-break-before: always;
+
+      }
+      
+      .header {
+        page: auto;
+        top: 0;
+        text-align: center;
+        img{
+           max-width: 5cm;
+           
+        }
+      }
+      
+      .footer {
+        page: auto;
+        bottom: 0;
+        text-align: center;
+      }
+      
+      /* Page breaks for the table */
+      table {
+        page-break-inside: avoid; /* Avoid breaking inside the table */
+        page-break-after: always; /* Ensure a page break after the table */
+      }
+      
+      tbody tr {
+        page-break-inside: avoid; /* Avoid breaking inside table rows */
+      }
+  }
+   
+    
+  

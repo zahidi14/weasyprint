@@ -1,6 +1,6 @@
 @page {
-  margin: 1cm;
-  size: A4 landscape;
+ size: A4 landscape; 
+  margin:1cm 0;
 }
 
 @page :first {
@@ -8,7 +8,9 @@
     display: flex;
   }
 }
-
+body{
+  font-size: 12px;
+}
 .header {
   display: flex;
   align-items: center;
@@ -34,9 +36,7 @@
 }
 body {
   border: 0;
-  width: 100%;
-  height: 100vh;
-  counter-reset: page;
+  padding: 1cm;
 }
 
 table {
@@ -44,7 +44,7 @@ table {
   border-collapse: collapse;
 }
 tr.content-row {
-  line-height: 2;
+  line-height: 3;
 }
 
 tr.content-row:nth-child(even) {
@@ -84,8 +84,8 @@ tr.detail-record td:nth-child(2) {
   page: auto;
 }
 .table-head {
-  border-top: 3px double black;
-  border-bottom: 5px solid black;
+ 
+  border-bottom: 3px solid black;
 }
 .table-foot {
   border-top: 2px double black;
@@ -100,18 +100,4 @@ tr > .page-number {
 tr > .date {
   text-align: left;
 }
-@page {
-  counter-increment: total;
-}
-.page-number .total::before {
-  content: counter(total);
-}
 
-@media print {
-  body {
-    counter-reset: page;
-  }
-  .page-number::before {
-    content: "Page " counter(page);
-  }
-}
