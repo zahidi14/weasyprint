@@ -4,21 +4,14 @@
   counter-increment: page;
 }
 @page{
-  @bottom-right{
-    content: "Page " counter(page);
-  }
-  @bottom-left{
-    content:"Thursday, "
-  }
+  
 }
 
 @page :first {
   .header {
     display: flex;
   }
-  .table-foot{
-    display: none;
-  }
+  
 }
 body{
   font-size: 12px;
@@ -112,4 +105,20 @@ tr > .page-number {
 tr > .date {
   text-align: left;
 }
-
+thead{
+  display: table-header-group;
+  
+}
+tbody{
+  display: table-row-group;
+}
+tfoot {
+  display: table-footer-group;
+}
+tfoot tr td #number::after {
+  counter-increment: page;
+  content: "Page " counter(page);
+}
+tfoot tr td .total::after {
+  content: "of " counter(pages);
+}

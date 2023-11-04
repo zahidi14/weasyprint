@@ -11,6 +11,7 @@ header {
   align-items: center;
 }
 header .invoice-head {
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -34,6 +35,7 @@ header .invoice-head img {
 }
 
 .billing {
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -53,8 +55,14 @@ header .invoice-head img {
 .billing .balance table {
   width: 100%;
 }
-.billing .balance table tbody .result:nth-child(3), .billing .balance table tbody .result:nth-child(4) {
+.billing .balance table tbody tr.result td:nth-child(3), .billing .balance table tbody tr.result td:nth-child(4) {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  font-size: 16px;
   font-weight: 600;
+}
+.billing .balance table tbody tr:last-child {
+  height: 25px;
 }
 
 main .title {
@@ -63,6 +71,10 @@ main .title {
 }
 main .row table {
   width: 100%;
+  line-height: 2;
+}
+main .row table thead {
+  border-bottom: 1px solid black;
 }
 main .note {
   font-weight: 600;

@@ -98,7 +98,7 @@ table {
       td{
         #number{
           &::after{
-            counter-increment:page;
+            counter-increment: page;
           content:"Page " counter(page);
           }
           
